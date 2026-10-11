@@ -1,0 +1,12 @@
+{
+  "name": "center-hub",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Center_HUB — หน้าเว็บกลางจัดการ project ทุกเครื่องผ่าน PM2 / git / deploy / load balancer",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "user": "node scripts/user.js"
+  },
+  "engines": { "node": ">=18" }
+}

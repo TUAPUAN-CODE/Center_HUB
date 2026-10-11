@@ -1,0 +1,11 @@
+node_modules/
+.env
+*.log
+hub/data/
+agent/data/
+agent/config/agent.json
+agent/config/projects.json
+agent/config/*.bak
+*.tmp
+.DS_Store
+Thumbs.db

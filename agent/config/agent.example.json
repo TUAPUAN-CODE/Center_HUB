@@ -1,0 +1,10 @@
+{
+  "id": "srv116",
+  "name": "App Server 116",
+  "fetchIntervalMin": 5,
+  "scheduleWindowMin": 60,
+  "allowedCommands": [],
+  "reservedPorts": [],
+  "pm2Name": "center-agent",
+  "nginx": null
+}

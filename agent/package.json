@@ -1,0 +1,14 @@
+{
+  "name": "center-hub-agent",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Center_HUB Agent — คุม PM2 / git / deploy บนแต่ละเครื่อง",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "pm2": "6.0.14"
+  }
+}

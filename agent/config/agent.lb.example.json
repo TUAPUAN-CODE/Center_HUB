@@ -1,0 +1,10 @@
+{
+  "id": "srv115",
+  "name": "LB / DB Server 115",
+  "fetchIntervalMin": 5,
+  "nginx": {
+    "exe": "C:\\nginx\\nginx.exe",
+    "prefix": "C:\\nginx",
+    "confFile": "C:\\nginx\\conf\\center_hub.conf"
+  }
+}

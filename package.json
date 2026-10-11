@@ -1,0 +1,11 @@
+{
+  "name": "center_hub",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Center_HUB — จัดการทุก project ทุกเครื่องผ่าน PM2 / git / auto deploy / load balancer จากหน้าเว็บเดียว",
+  "scripts": {
+    "test": "node --test tests/unit.test.js tests/integration.test.js",
+    "test:unit": "node --test tests/unit.test.js"
+  },
+  "engines": { "node": ">=18" }
+}

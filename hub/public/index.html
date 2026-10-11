@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Center_HUB</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div id="login" class="login hidden">
+    <form id="login-form" class="login-card" autocomplete="on">
+      <div class="brand big"><span class="logo">◆</span> Center_HUB</div>
+      <p class="muted">จัดการทุก project ทุกเครื่องจากที่เดียว</p>
+      <label>ชื่อผู้ใช้<input name="username" autocomplete="username" required></label>
+      <label>รหัสผ่าน<input name="password" type="password" autocomplete="current-password" required></label>
+      <button class="btn primary" type="submit">เข้าสู่ระบบ</button>
+      <p id="login-error" class="error-text" role="alert"></p>
+    </form>
+  </div>
+
+  <div id="app" class="hidden">
+    <header class="topbar">
+      <div class="brand"><span class="logo">◆</span> Center_HUB</div>
+      <nav id="nav" class="nav">
+        <a href="#/overview" data-page="overview">ภาพรวม</a>
+        <a href="#/ports" data-page="ports">พอร์ต</a>
+        <a href="#/lb" data-page="lb">Load Balancer</a>
+        <a href="#/settings" data-page="settings">ตั้งค่า</a>
+        <a href="#/audit" data-page="audit" data-role="admin">ประวัติการสั่งงาน</a>
+      </nav>
+      <div class="me"><span id="me-name"></span><span id="me-role" class="pill"></span><button id="logout" class="btn ghost small" type="button">ออกจากระบบ</button></div>
+    </header>
+    <main id="view" class="view"></main>
+  </div>
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+</body>
+</html>
