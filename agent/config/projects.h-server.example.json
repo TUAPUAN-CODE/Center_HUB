@@ -1,0 +1,140 @@
+[
+  {
+    "id": "delayhub",
+    "name": "DelayHUB (PFCM)",
+    "repoDir": "I:\\test\\DelayHUB",
+    "branch": "main",
+    "remote": "origin",
+    "ecosystem": "backend/ecosystem.config.js",
+    "apps": [
+      "PFCMv2-backend",
+      "PFCMv2-frontend",
+      "delay-alert-worker",
+      "reset-rsrv-worker"
+    ],
+    "singleton": [
+      "delay-alert-worker",
+      "reset-rsrv-worker"
+    ],
+    "ports": [
+      3000,
+      80
+    ],
+    "health": [
+      {
+        "url": "http://127.0.0.1:3000/health"
+      },
+      {
+        "url": "http://127.0.0.1:80/"
+      }
+    ],
+    "deploy": {
+      "mode": "manual",
+      "days": [
+        0
+      ],
+      "time": "03:00",
+      "freeze": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "from": "07:00",
+          "to": "20:00"
+        }
+      ],
+      "install": [
+        {
+          "cwd": "backend",
+          "cmd": [
+            "npm",
+            "ci",
+            "--omit=dev"
+          ]
+        },
+        {
+          "cwd": "frontend",
+          "cmd": [
+            "npm",
+            "ci"
+          ]
+        }
+      ],
+      "build": [
+        {
+          "cwd": "frontend",
+          "cmd": [
+            "npm",
+            "run",
+            "build"
+          ],
+          "timeoutMin": 20
+        }
+      ],
+      "test": [],
+      "restorePaths": [],
+      "reload": "reload",
+      "rollback": true,
+      "healthTimeoutSec": 90
+    }
+  },
+  {
+    "id": "chem-rechub",
+    "name": "Chem_RecHUB",
+    "repoDir": "H:\\Chem_RecHUB",
+    "ecosystem": "ecosystem.config.js",
+    "apps": [
+      "chem-rechub"
+    ],
+    "ports": [
+      4101
+    ],
+    "health": [
+      "http://127.0.0.1:4101/health"
+    ],
+    "deploy": {
+      "mode": "manual"
+    }
+  },
+  {
+    "id": "chem-issuehub",
+    "name": "Chem_IssueHUB",
+    "repoDir": "H:\\Chem_IssueHUB",
+    "ecosystem": "ecosystem.config.js",
+    "apps": [
+      "chem-issuehub"
+    ],
+    "ports": [
+      4102
+    ],
+    "health": [
+      "http://127.0.0.1:4102/health"
+    ],
+    "deploy": {
+      "mode": "manual"
+    }
+  },
+  {
+    "id": "chem-identifyhub",
+    "name": "Chem_IdentifyHUB",
+    "repoDir": "H:\\Chem_IdentifyHUB",
+    "ecosystem": "ecosystem.config.js",
+    "apps": [
+      "chem-identifyhub"
+    ],
+    "ports": [
+      4103
+    ],
+    "health": [
+      "http://127.0.0.1:4103/health"
+    ],
+    "deploy": {
+      "mode": "manual"
+    }
+  }
+]
