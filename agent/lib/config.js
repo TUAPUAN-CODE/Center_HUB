@@ -24,9 +24,15 @@ const TIME_RE = /^([01]\d|2[0-3]):[0-5]\d$/;
 const APP_RE = /^[A-Za-z0-9._@-]{1,80}$/;
 
 const readJson = (file, fallback) => {
-  try { return JSON.parse(fs.readFileSync(file, 'utf8')); } catch (e) {
+  let text;
+  try { text = fs.readFileSync(file, 'utf8'); } catch (e) {
     if (e.code === 'ENOENT') return fallback;
     throw new Error(`อ่าน ${path.basename(file)} ไม่ได้: ${e.message}`);
+  }
+  // ไฟล์ว่าง (เช่น เปิด Notepad สร้างไฟล์แล้วปิดโดยไม่ Save) = ยังไม่ได้ตั้งค่า
+  if (!text.replace(/^\uFEFF/, '').trim()) return fallback;
+  try { return JSON.parse(text.replace(/^\uFEFF/, '')); } catch (e) {
+    throw new Error(`อ่าน ${path.basename(file)} ไม่ได้ (JSON ไม่ถูกต้อง): ${e.message}`);
   }
 };
 

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "chem-rechub",
+    "name": "Chem_RecHUB",
+    "repoDir": "H:\\Chem_RecHUB",
+    "ecosystem": "ecosystem.config.js",
+    "apps": ["chem-rechub"],
+    "ports": [4101],
+    "health": ["http://127.0.0.1:4101/health"],
+    "deploy": { "mode": "manual" }
+  },
+  {
+    "id": "chem-issuehub",
+    "name": "Chem_IssueHUB",
+    "repoDir": "H:\\Chem_IssueHUB",
+    "ecosystem": "ecosystem.config.js",
+    "apps": ["chem-issuehub"],
+    "ports": [4102],
+    "health": ["http://127.0.0.1:4102/health"],
+    "deploy": { "mode": "manual" }
+  },
+  {
+    "id": "chem-identifyhub",
+    "name": "Chem_IdentifyHUB",
+    "repoDir": "H:\\Chem_IdentifyHUB",
+    "ecosystem": "ecosystem.config.js",
+    "apps": ["chem-identifyhub"],
+    "ports": [4103],
+    "health": ["http://127.0.0.1:4103/health"],
+    "deploy": { "mode": "manual" }
+  },
+  {
+    "id": "qr-ink-hub",
+    "name": "QR_Code_Ink_Code_HUB",
+    "repoDir": "H:\\QR_Code_Ink_Code_HUB",
+    "ecosystem": "ecosystem.config.js",
+    "apps": ["qr-code-ink-hub"],
+    "ports": [81],
+    "health": ["http://127.0.0.1:81/health"],
+    "deploy": { "mode": "manual" }
+  }
+]
