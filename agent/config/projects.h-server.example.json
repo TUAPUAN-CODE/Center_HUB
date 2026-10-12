@@ -17,12 +17,12 @@
       "reset-rsrv-worker"
     ],
     "ports": [
-      3000,
+      3001,
       80
     ],
     "health": [
       {
-        "url": "http://127.0.0.1:3000/health"
+        "url": "http://127.0.0.1:3001/health/ready"
       },
       {
         "url": "http://127.0.0.1:80/"
